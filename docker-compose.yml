@@ -1,0 +1,52 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_DATABASE: 'aaulyp_app_db'
+      MYSQL_ROOT_PASSWORD: 'secret'
+      MYSQL_PASSWORD: 'atxyp'
+      MYSQL_USER: 'aaulyp_admin'
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+      - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+        - aaulypapp
+  app:
+    build:
+        args:
+            user: appadmin
+            uid: 1001
+        context: ./
+        dockerfile: app.dockerfile
+    image: aaulypapp
+    stdin_open: true
+    tty: true
+    container_name: aaulypapp-app
+    restart: unless-stopped
+    working_dir: /var/www//html
+    volumes:
+      - ./:/var/www/html
+      - ./.docker/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    networks:
+      - aaulypapp
+  nginx:
+      build:
+        context: ./
+        dockerfile: web.dockerfile
+      container_name: aaulypapp-nginx
+      restart: unless-stopped
+      ports:
+      - 8008:80
+      volumes:
+      - ./:/var/www/html
+      - ./.docker/nginx.conf:/etc/conf.d/default.conf
+      networks:
+      - aaulypapp
+
+networks:
+    aaulypapp:
+        driver: bridge

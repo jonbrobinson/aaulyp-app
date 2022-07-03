@@ -1,0 +1,58 @@
+/* your custom styles here */
+.hero-unit-slider .carousel-caption {
+
+    bottom: inherit;
+    top: 25%;
+    text-shadow: none;
+}
+
+.admin-form-wrapper {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.social-button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/*#partner_img {*/
+    /*display:inline-block;*/
+    /*margin-left:auto;*/
+    /*margin-right:auto;*/
+/*}*/
+
+/*#partner_container {*/
+    /*margin-bottom: 50px;*/
+/*}*/
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+    .hero-unit-slider .carousel-caption {
+        top: 25%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-unit-slider .carousel-inner > .item > img {
+        max-width: inherit;
+    }
+}
+@media screen and (max-width: 768px) {
+    .hero-unit-slider .carousel-caption {
+        top: 0%;
+    }
+    .hero-unit-slider .hero-heading {
+        font-size: 24px;
+    }
+    .hero-unit-slider .lead {
+        font-size: 12px;
+    }
+    .hero-unit-slider .hero-button {
+        font-size: 10px;
+    }
+}
+
+.contact-aaulyp {
+    display: none;
+}

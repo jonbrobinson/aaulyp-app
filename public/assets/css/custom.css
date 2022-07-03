@@ -1,0 +1,78 @@
+.navbar-brand.navbar-logo-bigger {
+  padding: 0 0 60px 10px;
+}
+.navbar-brand.navbar-logo-bigger > img {
+  position: relative;
+  top: -5px;
+  width: 225px;
+}
+
+/* main features */
+.main-features {
+  padding: 10px 0;
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: #a5101e;
+  color: #c33d3d;
+  /*color: white;*/
+}
+.main-features i {
+  font-size: 5em;
+  margin-bottom: 28px;
+}
+.main-features div[class^="col-"]:after {
+  content: '';
+  border-right: 1px dashed #c33d3d;
+  position: absolute;
+  height: 20px;
+  top: 50%;
+  right: 0;
+  margin-top: -10px;
+}
+.main-features div[class^="col-"]:last-child:after {
+  border-right: none;
+}
+
+.feature-heading {
+  margin: 0;
+  color: white;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+  .main-features div[class^="col-"] {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .main-features div[class^="col-"]:after {
+    display: none;
+  }
+}
+
+.testimonial-with-bg {
+  padding: 120px 0;
+  background-image: url('../img/aaulyp/aaulyp_parallax.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+footer .logo {
+  width: 225px;
+  margin-bottom: 15px;
+}
+
+.favicon-list-custom {
+  color: #a5101e;
+}
+
+.gallery_image {
+  margin-bottom: 1em;
+}
+
+#map {
+  width: 75%;
+  height: 300px;
+  margin-top: 30px;
+}

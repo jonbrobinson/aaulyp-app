@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingPagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingPagesController::class, 'home']);
+
+Route::get('/join', [LandingPagesController::class, 'join']);
+
+Route::get('/membershipPortal', [LandingPagesController::class, 'membershipPortal']);
+
+Route::get('/contact', [LandingPagesController::class, 'contact']);
